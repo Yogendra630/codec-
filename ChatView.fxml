@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chatapp.controller.ChatController">
+   <children>
+      <!-- Left sidebar - Chat list -->
+      <VBox styleClass="sidebar" minWidth="250" maxWidth="250">
+         <children>
+            <VBox styleClass="sidebar-header" spacing="10">
+               <children>
+                  <Text styleClass="sidebar-title" text="Chats" />
+                  <Button fx:id="newChatButton" text="New Chat" styleClass="new-chat-button" />
+               </children>
+            </VBox>
+            
+            <ListView fx:id="chatListView" VBox.vgrow="ALWAYS" styleClass="chat-list" />
+         </children>
+      </VBox>
+      
+      <!-- Right side - Chat area -->
+      <VBox styleClass="chat-area" HBox.hgrow="ALWAYS">
+         <children>
+            <!-- Chat header -->
+            <HBox styleClass="chat-header" alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="currentChatLabel" text="Select a chat" styleClass="chat-title" />
+               </children>
+            </HBox>
+            
+            <!-- Messages area -->
+            <ListView fx:id="messageListView" VBox.vgrow="ALWAYS" styleClass="message-list" />
+            
+            <!-- Message input area -->
+            <HBox styleClass="message-input-area" spacing="10" alignment="CENTER_LEFT">
+               <children>
+                  <TextArea fx:id="messageInput" promptText="Type your message..." styleClass="message-input" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="sendButton" text="Send" styleClass="send-button" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   
+   <stylesheets>
+      <String fx:value="/css/styles.css" />
+   </stylesheets>
+</HBox>
